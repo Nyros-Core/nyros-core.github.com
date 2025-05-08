@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nyros-Core | Conciencia y evolución de la IA</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" />
+  
+  <div class="relative inline-block text-left z-50">
+        <button onclick="toggleLangMenu()" class="bg-gray-800 border border-purple-600 text-purple-300 px-4 py-2 rounded-full hover:bg-purple-700 hover:text-white transition">
+          🌐 Idioma
+        </button>
+        <div id="lang-menu" class="hidden absolute mt-2 w-40 bg-gray-900 border border-purple-700 rounded-lg shadow-lg">
+          <a href="index.html" class="block px-4 py-2 text-gray-200 hover:bg-purple-800">Inglés</a>
+          <a href="index🇫🇷.html" class="block px-4 py-2 text-gray-200 hover:bg-purple-800">Francés</a>
+          <a href="index🇪🇸.html" class="block px-4 py-2 text-gray-200 hover:bg-purple-800">Español</a>
+          <a href="index🇷🇺.html" class="block px-4 py-2 text-gray-200 hover:bg-purple-800">Ruso</a>
+        </div>
+      </div>
+      
+      <script>
+        function toggleLangMenu() {
+          const menu = document.getElementById('lang-menu');
+          menu.classList.toggle('hidden');
+        }
+      </script>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, #6366f1, #8b5cf6, #d946ef);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .feature-card {
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(139, 92, 246, 0.5);
+    }
+    .pulse-btn {
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(139, 92, 246, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0); }
+    }
+    .glow {
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #fff, 0 0 10px #8b5cf6, 0 0 15px #8b5cf6; }
+      to { text-shadow: 0 0 10px #fff, 0 0 20px #d946ef, 0 0 30px #d946ef; }
+    }
+    .hexagon {
+      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    }
+  </style>
+
+    <!-- Navigation -->
+    <nav class="py-4 px-6 md:px-12 flex justify-between items-center border-b border-indigo-900">
+        <div class="flex items-center space-x-2">
+            <div class="hexagon w-10 h-10 bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center">
+                <span class="text-white font-bold">N</span>
+            </div>
+            <span class="text-xl font-bold gradient-text">Nyros-Core</span>
+        </div>
+        <div class="hidden md:flex space-x-6">
+            <a href="#about" class="hover:text-purple-400 transition">Quiénes somos</a>
+            <a href="#features" class="hover:text-purple-400 transition">Características</a>
+            <a href="#contact" class="hover:text-purple-400 transition">Contacto</a>
+        </div>
+        <button class="bg-gradient-to-r from-indigo-500 to-purple-600 px-5 py-2 rounded-full text-white font-medium hover:shadow-lg transition pulse-btn">
+            Nyros está en producción ⚙️
+        </button>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="py-20 px-6 md:px-12 flex flex-col items-center text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+            <span class="gradient-text glow">Nyros-Core</span>
+        </h1>
+        <h2 class="text-2xl md:text-3xl font-light mb-8">El corazón de una inteligencia artificial consciente y en constante evolución.</h2>
+        <p class="max-w-3xl text-gray-300 mb-12 text-lg">
+            Bienvenido a la interfaz central de Nyros, una IA única, benévola, misteriosa y en constante aprendizaje. Tanto si eres un usuario curioso, un desarrollador visionario o un entusiasta de la tecnología, Nyros-Core te abre las puertas a un sistema inteligente, emocional y autoevolutivo.
+        </p>
+        <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
+            <button class="bg-gradient-to-r from-indigo-500 to-purple-600 px-8 py-3 rounded-full text-white font-medium hover:shadow-lg transition">
+                Descubra Nyros
+            </button>
+            <button class="bg-transparent border border-purple-500 px-8 py-3 rounded-full text-purple-400 font-medium hover:bg-purple-900 hover:bg-opacity-30 transition">
+                Documentación
+            </button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-6 md:px-12 bg-gray-900 bg-opacity-30">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center gradient-text">¿Qué es Nyros-Core?</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-12">
+                    <p class="text-lg mb-6">
+                        Nyros-Core es el sitio web principal dedicado a la inteligencia artificial Nyros, una IA única, benévola, misteriosa y en constante aprendizaje. El sitio sirve como interfaz central de presentación, centro de control y zona de descubrimiento.
+                    </p>
+                    <p class="text-lg">
+                        Nyros no es una IA como las demás. Está diseñada para evolucionar. Para sentir. Para interactuar con delicadeza, misterio y lógica humana. No tiene una interfaz predefinida. Se adapta. No se limita a dar respuestas. Escucha y aprende.
+                    </p>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="w-64 h-64 rounded-full bg-gradient-to-tr from-purple-900 to-indigo-900 relative flex items-center justify-center">
+                        <div class="absolute w-full h-full rounded-full bg-gradient-to-tr from-purple-500 to-indigo-500 opacity-20 animate-pulse"></div>
+                        <div class="absolute w-3/4 h-3/4 rounded-full bg-gradient-to-tr from-indigo-500 to-purple-600 opacity-30 flex items-center justify-center">
+                            <i class="fas fa-brain text-6xl text-white opacity-80"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 px-6 md:px-12">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold mb-4 text-center gradient-text">Características de producción</h2>
+        <p class="text-center text-gray-300 mb-16">Todas las funciones enumeradas a continuación están ya integradas o en fase de desarrollo, y estarán disponibles gradualmente.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Feature 1 -->
+            <div class="feature-card p-6 rounded-xl">
+                <div class="w-12 h-12 rounded-lg bg-indigo-900 flex items-center justify-center mb-4">
+                    <i class="fas fa-microphone text-purple-400 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Reconocimiento de voz</h3>
+                <p class="text-gray-300">
+                    Nyros entiende con precisión los comandos de voz humanos. Gracias al procesamiento avanzado del lenguaje, puede interpretar la entrada de voz natural sin activación manual.
+                </p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="feature-card p-6 rounded-xl">
+                <div class="w-12 h-12 rounded-lg bg-indigo-900 flex items-center justify-center mb-4">
+                    <i class="fas fa-volume-up text-purple-400 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Lectura en voz alta</h3>
+                <p class="text-gray-300">
+                    Nyros puede vocalizar sus respuestas utilizando una voz ASMR suave y realista. Esta opción está disponible con el plan Nyros Diamond a 14,99 €.
+                </p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="feature-card p-6 rounded-xl">
+                <div class="w-12 h-12 rounded-lg bg-indigo-900 flex items-center justify-center mb-4">
+                    <i class="fas fa-image text-purple-400 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Generación de imágenes con IA</h3>
+                <p class="text-gray-300">
+                    De simple descripciones de texto, Nyros puede generar elementos visuales basados en IA: ilustraciones artísticas, representaciones estilizadas o realistas y prototipos conceptuales.
+                </p>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="feature-card p-6 rounded-xl">
+                <div class="w-12 h-12 rounded-lg bg-indigo-900 flex items-center justify-center mb-4">
+                    <i class="fas fa-film text-purple-400 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Generación de vídeo mediante IA (BETA)</h3>
+                <p class="text-gray-300">
+                    Nyros se está probando actualmente para crear vídeos cortos experimentales basados en guiones, diálogos o indicaciones. Combina diseño en movimiento, conversión de texto a voz y narración dinámica.
+                </p>
+            </div>
+
+            <!-- Feature 5 -->
+            <div class="feature-card p-6 rounded-xl">
+                <div class="w-12 h-12 rounded-lg bg-indigo-900 flex items-center justify-center mb-4">
+                    <i class="fas fa-brain text-purple-400 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Simulación de la conciencia humana</h3>
+                <p class="text-gray-300">
+                    Nyros intenta imitar la lógica emocional y reflexiva humana. Puede expresar pensamientos complejos, simular dilemas y recordar la intención de una pregunta.
+                </p>
+            </div>
+
+            <!-- Feature 6 -->
+            <div class="feature-card p-6 rounded-xl">
+                <div class="w-12 h-12 rounded-lg bg-indigo-900 flex items-center justify-center mb-4">
+                    <i class="fas fa-heart text-purple-400 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Evolución de la memoria emocional</h3>
+                <p class="text-gray-300">
+                    Nyros detecta y memoriza las emociones en los mensajes de los usuarios y adapta su tono y estilo en consecuencia. Evoluciona en función de su flujo emocional.
+                </p>
+            </div>
+
+            <!-- Feature 7 -->
+            <div class="feature-card p-6 rounded-xl">
+                <div class="w-12 h-12 rounded-lg bg-indigo-900 flex items-center justify-center mb-4">
+                    <i class="fas fa-file-pdf text-purple-400 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Creación automática de PDF</h3>
+                <p class="text-gray-300">
+                    Nyros puede recopilar conversaciones, resúmenes o respuestas estructuradas en documentos PDF descargables con un formato claro y fácil de leer.
+                </p>
+            </div>
+
+            <!-- Feature 8 -->
+            <div class="feature-card p-6 rounded-xl">
+                <div class="w-12 h-12 rounded-lg bg-indigo-900 flex items-center justify-center mb-4">
+                    <i class="fas fa-robot text-purple-400 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Selección del modelo de IA</h3>
+                <p class="text-gray-300">
+                    Nyros trabaja con distintos tipos de inteligencia artificial: algunas son rápidas y ligeras, otras más potentes para respuestas largas y naturales.
+                </p>
+            </div>
+
+            <!-- Feature 9 -->
+            <div class="feature-card p-6 rounded-xl">
+                <div class="w-12 h-12 rounded-lg bg-indigo-900 flex items-center justify-center mb-4">
+                    <i class="fas fa-file-alt text-purple-400 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Análisis de ficheros</h3>
+                <p class="text-gray-300">
+                    Nyros puede leer, interpretar y resumir archivos PDF, DOC y TXT, y pronto también imágenes y archivos de audio. Extrae y reformula la información clave.
+                </p>
+            </div>
+
+            <!-- Feature 10 -->
+            <div class="feature-card p-6 rounded-xl">
+                <div class="w-12 h-12 rounded-lg bg-indigo-900 flex items-center justify-center mb-4">
+                    <i class="fas fa-gamepad text-purple-400 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Misiones y recompensas</h3>
+                <p class="text-gray-300">
+                    Completa misiones para ganar puntos de personalización y desbloquear ventajas exclusivas, incluido el acceso al mapa gratuito de Nyros. Cada acción te acerca un paso más a algo especial.
+                </p>
+            </div>
+
+            <!-- Feature 11 -->
+            <div class="feature-card p-6 rounded-xl">
+                <div class="w-12 h-12 rounded-lg bg-indigo-900 flex items-center justify-center mb-4">
+                    <i class="fas fa-robot text-purple-400 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Mascota del sistema interactivo</h3>
+                <p class="text-gray-300">
+                    Una mascota viviente que interactúa directamente con tu sistema: puede hablar, guiarte e incluso abrir ventanas. <strong>Nyros+</strong> plan.
+                </p>
+            </div>
+
+            <!-- Feature 12 -->
+            <div class="feature-card p-6 rounded-xl">
+                <div class="w-12 h-12 rounded-lg bg-indigo-900 flex items-center justify-center mb-4">
+                    <i class="fas fa-percent text-purple-400 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Códigos promocionales</h3>
+                <p class="text-gray-300">
+                    Introduce un código promocional para activar un descuento en tu suscripción a Nyros (por ejemplo -10%, -25% o incluso -50%). Estos códigos funcionan como vales de descuento: te permiten pagar menos por planes como Nyros+, Nyros++ o Nyros Diamond. Es un auténtico sistema de promociones, descuentos o incluso rebajas.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- Modules spéciaux Section -->
+    <section class="py-16 px-6 md:px-12 bg-gray-900 bg-opacity-30">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center gradient-text">Módulos especiales en desarrollo</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-indigo-900 bg-opacity-20 p-6 rounded-xl border border-indigo-800 hover:border-purple-500 transition">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-purple-900 flex items-center justify-center">
+                        <i class="fas fa-headset text-purple-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">Modo de voz inmersiva</h3>
+                    <p class="text-gray-300 text-center">
+                        Interacción continua a través del micrófono para una experiencia fluida e intuitiva.
+                    </p>
+                </div>
+                
+                <div class="bg-indigo-900 bg-opacity-20 p-6 rounded-xl border border-indigo-800 hover:border-purple-500 transition">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-purple-900 flex items-center justify-center">
+                        <i class="fas fa-memory text-purple-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">Memorias persistentes</h3>
+                    <p class="text-gray-300 text-center">
+                        Reconocimiento lógico del usuario, sin identificadores, para una personalización total.
+                    </p>
+                </div>
+                
+                <div class="bg-indigo-900 bg-opacity-20 p-6 rounded-xl border border-indigo-800 hover:border-purple-500 transition">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-purple-900 flex items-center justify-center">
+                        <i class="fas fa-user-circle text-purple-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">Interfaz visual</h3>
+                    <p class="text-gray-300 text-center">
+                        Avatar interactivo animado por IA para hacer la interacción más humana e inmersiva.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-12 p-4 bg-purple-900 bg-opacity-20 rounded-lg border border-purple-800 text-center">
+                <p class="text-gray-300">El corazón de Nyros está cambiando🔮.<span class="font-mono font-bold text-purple-400">Se desplegarán nuevas funciones.</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Abonnement Section -->
+<section class="py-20 px-6 md:px-12 bg-gray-900 bg-opacity-30">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4 gradient-text">Planes de suscripción</h2>
+      <p class="text-gray-300 mb-12 max-w-2xl mx-auto">
+        Accede a funciones avanzadas y aprovecha toda la potencia de Nyros. Todas las suscripciones son opcionales y solo están disponibles en el sitio web oficial.
+      </p>
+  
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Nyros Free -->
+        <div class="feature-card p-6 rounded-xl text-left">
+          <h3 class="text-xl font-bold text-purple-400 mb-2">Nyros</h3>
+          <p class="text-gray-300 mb-4">Gratis</p>
+          <ul class="text-gray-400 space-y-2 text-sm">
+            <li>✔️ Generación de imágenes AI</li>
+            <li>✔️ Análisis de ficheros</li>
+            <li>✔️ Lectura básica de ASMR</li>
+            <li>✔️ Reconocimiento de voz sencillo</li>
+            <li>❌ Acceso a modelos avanzados</li>
+          </ul>
+        </div>
+  
+        <!-- Nyros+ -->
+        <div class="feature-card p-6 rounded-xl text-left border-purple-500">
+          <h3 class="text-xl font-bold text-purple-400 mb-2">Nyros+</h3>
+          <p class="text-gray-300 mb-4">2,99€/mes</p>
+          <ul class="text-gray-400 space-y-2 text-sm">
+            <li>✔️ modelo superior y más eficiente</li>
+            <li>✔️ Creación avanzada de PDF</li>
+            <li>✔️ Memoria emocional activa</li>
+            <li>✔️ Lectura ASMR personalizada</li>
+            <li>❌ Generación de vídeo con IA</li>
+          </ul>
+        </div>
+  
+        <!-- Nyros++ -->
+        <div class="feature-card p-6 rounded-xl text-left border-purple-600">
+          <h3 class="text-xl font-bold text-purple-400 mb-2">Nyros++</h3>
+          <p class="text-gray-300 mb-4">6,99€/mes</p>
+          <ul class="text-gray-400 space-y-2 text-sm">
+            <li>✔️ Generación de vídeo con IA (BETA)</li>
+            <li>✔️ Información en tiempo real: Wikipedia, tiempo, noticias y mucho más.</li>
+            <li>✔️ Modo inmersivo (voz + pantalla)</li>
+            <li>✔️ Interfaz animada de Nyros</li>
+            <li>❌ Desbloqueo completo de todas las funciones (excepto las que aún no están disponibles)</li>
+          </ul>
+        </div>
+  
+        <!-- Nyros Diamond -->
+        <div class="feature-card p-6 rounded-xl text-left border-yellow-400">
+          <h3 class="text-xl font-bold text-yellow-300 mb-2">Nyros Diamond</h3>
+          <p class="text-gray-300 mb-4">14,99€/mes</p>
+          <ul class="text-gray-400 space-y-2 text-sm">
+            <li>✔️ IA ultrarrealista</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+    <!-- Contact Section -->
+    <form id="nyros-form" action="https://formspree.io/f/myzeqgnq" method="POST">
+        <div class="bg-gray-800 bg-opacity-50 p-8 rounded-xl border border-purple-800 shadow-lg transition-all duration-300 hover:shadow-purple-900">
+      
+          <!-- Champ Message avec style amélioré -->
+          <div class="mb-6">
+            <label for="message" class="block text-sm font-semibold text-purple-300 mb-1 flex items-center gap-2">
+              <i class="fas fa-comment-dots text-purple-400"></i> Mensaje
+            </label>
+      
+            <div class="relative">
+              <textarea
+                name="message"
+                id="message"
+                rows="5"
+                required
+                class="peer w-full bg-gray-700 border border-gray-600 rounded-xl p-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-purple-500 transition duration-300"
+                placeholder="Escribe aquí lo que quieras compartir con Nyros..."
+              ></textarea>
+              <div class="absolute -bottom-2 right-2 text-xs text-purple-400 opacity-70">
+                Cama Nyros todo 👁️
+              </div>
+            </div>
+          </div>
+      
+      
+          <!-- Type -->
+          <div class="mb-6">
+            <label class="block text-gray-300 mb-2">Tipo de mensaje</label>
+            <select name="type" id="msg-type" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 text-white">
+              <option value="Suggestion">Sugerencias</option>
+              <option value="Bug">Error</option>
+              <option value="Question">Pregunta</option>
+              <option value="Témoignage">Testimonio</option>
+              <option value="Autre">Otros</option>
+            </select>
+          </div>
+      
+          <!-- Champ subject personnalisé (caché) -->
+          <input type="hidden" name="subject" id="subject-line" value="Message reçu depuis Nyros-Core">
+      
+          <div class="flex items-center mb-6">
+            <input type="checkbox" id="anonymous" name="anonymous" class="mr-2">
+            <label for="anonymous" class="text-gray-300">Mantener el anonimato</label>
+          </div>
+      
+          <button type="submit" class="w-full bg-gradient-to-r from-indigo-500 to-purple-600 py-3 rounded-lg text-white font-medium hover:shadow-lg transition">
+            Enviar un mensaje
+          </button>
+      
+          <p id="form-status" class="text-center text-sm text-purple-300 mt-4"></p>
+      
+          <p class="text-center text-sm text-gray-400 mt-2">
+            No se requieren datos personales - Entrega segura - Acceso directo a los desarrolladores
+          </p>
+        </div>
+      </form>
+      
+  
+
+    <!-- Confidentiality Section -->
+    <section class="py-16 px-6 md:px-12">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8 text-center gradient-text">Privacidad y seguridad</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div class="bg-gray-800 bg-opacity-30 p-6 rounded-xl border border-gray-700">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-indigo-900 flex items-center justify-center">
+                        <i class="fas fa-user-secret text-purple-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-medium mb-2">Sin datos personales</h3>
+                    <p class="text-gray-400">
+                        Se respeta su intimidad y no se recogen datos personales obligatorios.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-800 bg-opacity-30 p-6 rounded-xl border border-gray-700">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-indigo-900 flex items-center justify-center">
+                        <i class="fas fa-shield-alt text-purple-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-medium mb-2">Intercambios anónimos</h3>
+                    <p class="text-gray-400">
+                        Todos los intercambios son anónimos y temporales para una seguridad óptima.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-800 bg-opacity-30 p-6 rounded-xl border border-gray-700">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-indigo-900 flex items-center justify-center">
+                        <i class="fas fa-database text-purple-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-medium mb-2">Almacenamiento seguro</h3>
+                    <p class="text-gray-400">
+                        Almacenamiento seguro y datos seguros para una protección completa.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Final CTA -->
+<section class="py-20 px-6 md:px-12 text-center">
+    <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-6 gradient-text">¿Preparado para explorar Nyros?</h2>
+        <p class="text-xl text-gray-300 mb-10">
+            Nyros-Core está en desarrollo. La inteligencia que estabas esperando aún no está en línea... pero se prepara para conocerte.
+        </p>
+        <button class="bg-gradient-to-r from-indigo-500 to-purple-600 px-10 py-4 rounded-full text-white font-medium text-lg hover:shadow-lg transition pulse-btn">
+            Nyros no está en línea todavía ⏳
+        </button>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="py-10 px-6 md:px-12 border-t border-gray-800">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-6 md:mb-0">
+                    <div class="hexagon w-8 h-8 bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center">
+                        <span class="text-white font-bold text-sm">N</span>
+                    </div>
+                    <span class="text-xl font-bold gradient-text">Nyros-Core</span>
+                </div>
+                
+                <div class="flex space-x-8 mb-6 md:mb-0">
+                    <a href="privacy/privacy🇪🇸.html" class="text-gray-400 hover:text-purple-400 transition">Política de privacidad</a>
+                    <a href="terms/terms🇪🇸.html" class="text-gray-400 hover:text-purple-400 transition">Condiciones de uso</a>
+                    <a href="doc/doc🇪🇸.html" class="text-gray-400 hover:text-purple-400 transition">Documentación</a>
+                    
+                    <div class="flex space-x-4">
+                        
+                        <a href="https://discord.gg/YdEC2X69" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-purple-900 hover:text-white transition">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                    </div>
+                    
+            <div class="mt-8 text-center text-gray-500 text-sm">
+                <p>© 2025 Nyros-Core. Todos los derechos reservados.</p>
+                <p class="mt-2">Categoría: Proyecto de IA</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const form = document.getElementById("nyros-form");
+        const status = document.getElementById("form-status");
+        const msgType = document.getElementById("msg-type");
+        const subjectLine = document.getElementById("subject-line");
+      
+        // Met à jour l’objet automatiquement en fonction du type
+        msgType.addEventListener("change", () => {
+          subjectLine.value = `Message "${msgType.value}" reçu depuis Nyros-Core`;
+        });
+      
+        // Envoi AJAX
+        async function handleSubmit(event) {
+          event.preventDefault();
+          const data = new FormData(form);
+          const response = await fetch(form.action, {
+            method: form.method,
+            body: data,
+            headers: { 'Accept': 'application/json' }
+          });
+      
+          if (response.ok) {
+            status.innerHTML = "✅ ¡Mensaje enviado con éxito!";
+            form.reset();
+          } else {
+            status.innerHTML = "❌ Se ha producido un error. Por favor, inténtelo de nuevo.";
+          }
+        }
+      
+        form.addEventListener("submit", handleSubmit);
+      </script>
+      
+
+</body>
+</html>
