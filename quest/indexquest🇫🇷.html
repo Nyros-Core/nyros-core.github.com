@@ -1,0 +1,230 @@
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" />
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, #6366f1, #8b5cf6, #d946ef);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .feature-card {
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(139, 92, 246, 0.5);
+    }
+    .pulse-btn {
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(139, 92, 246, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0); }
+    }
+    .glow {
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #fff, 0 0 10px #8b5cf6, 0 0 15px #8b5cf6; }
+      to { text-shadow: 0 0 10px #fff, 0 0 20px #d946ef, 0 0 30px #d946ef; }
+    }
+    .hexagon {
+      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    }
+
+
+    /* 🎨 Scrollbar personnalisée */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(to bottom, #1d1233, #2b1b46);
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #a66cff, #6d28d9);
+  border-radius: 0; /* 👈 Important : 0 pour un coin carré */
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #c084fc, #9333ea);
+}
+  </style>
+
+<!-- 🎮 Système de Quêtes & Points - Nyros AI -->
+<section class="max-w-5xl mx-auto mt-20 text-gray-200 text-sm space-y-10">
+
+  <!-- Objectif -->
+  <div class="bg-purple-900 bg-opacity-20 border border-purple-700 rounded-xl p-6">
+    <h2 class="text-2xl font-bold text-purple-300 mb-4">🎮 Système de Quêtes & Points – Nyros AI</h2>
+    <h3 class="text-lg text-purple-400 font-semibold mb-2">🧩 Objectif général</h3>
+    <ul class="list-disc list-inside space-y-1">
+      <li>Gagner des points personnalisés</li>
+      <li>Récompenser l’utilisation régulière et intelligente de Nyros</li>
+      <li>Débloquer des bonus sans payer</li>
+    </ul>
+  </div>
+
+  <!-- Points personnalisés -->
+  <div class="bg-purple-900 bg-opacity-20 border border-purple-700 rounded-xl p-6">
+    <h3 class="text-lg text-purple-400 font-semibold mb-2">🪙 Points personnalisés (ex. : NyrosPoints)</h3>
+    <ul class="list-disc list-inside space-y-1">
+      <li>Obtenus en accomplissant des quêtes ou actions spéciales</li>
+      <li>100 % mérités, jamais achetables avec de l’argent</li>
+    </ul>
+
+    <h4 class="text-base text-purple-300 font-semibold mt-4 mb-2">📊 Utilisation des points :</h4>
+    <table class="w-full table-auto border border-purple-800 text-left">
+      <thead class="bg-purple-800 text-purple-100">
+        <tr>
+          <th class="p-2">Utilisation</th>
+          <th class="p-2">Coût</th>
+        </tr>
+      </thead>
+      <tbody class="bg-purple-950 bg-opacity-30">
+        <tr class="border-t border-purple-800">
+          <td class="p-2">🎭 Changer la mascotte (Néros)</td>
+          <td class="p-2">250 points</td>
+        </tr>
+        <tr class="border-t border-purple-800">
+          <td class="p-2">🎨 Changer l’interface visuelle</td>
+          <td class="p-2">500 points</td>
+        </tr>
+        <tr class="border-t border-purple-800">
+          <td class="p-2">🧠 Débloquer un style IA spécial</td>
+          <td class="p-2">1000 points</td>
+        </tr>
+        <tr class="border-t border-purple-800">
+          <td class="p-2">🏱️ Réduction -25 % sur un plan</td>
+          <td class="p-2">1500 points</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Quêtes disponibles -->
+  <div class="bg-purple-900 bg-opacity-20 border border-purple-700 rounded-xl p-6">
+    <h3 class="text-lg text-purple-400 font-semibold mb-2">🌟 Système de Quêtes (max 15)</h3>
+    <p class="text-sm mb-3">🔐 Maximum de 15 quêtes en cours ou disponibles par utilisateur. Renouvelables tous les 30 jours ou remplaçables par l'admin.</p>
+    <table class="w-full table-auto border border-purple-800 text-left text-sm">
+      <thead class="bg-purple-800 text-purple-100">
+        <tr>
+          <th class="p-2">Type</th>
+          <th class="p-2">Exemple de quête</th>
+          <th class="p-2">Récompense</th>
+        </tr>
+      </thead>
+      <tbody class="bg-purple-950 bg-opacity-30">
+        <tr class="border-t border-purple-800">
+          <td class="p-2">🗣️ Discussion</td>
+          <td class="p-2">Parler 10 jours avec Nyros</td>
+          <td class="p-2">+100 pts</td>
+        </tr>
+        <tr class="border-t border-purple-800">
+          <td class="p-2">🎯 Précision</td>
+          <td class="p-2">Poser 3 questions intelligentes d'affilée</td>
+          <td class="p-2">+150 pts</td>
+        </tr>
+        <tr class="border-t border-purple-800">
+          <td class="p-2">😄 Émotion</td>
+          <td class="p-2">Partager une émotion sincère</td>
+          <td class="p-2">+50 pts</td>
+        </tr>
+        <tr class="border-t border-purple-800">
+          <td class="p-2">📚 Savoir</td>
+          <td class="p-2">Réussir une question difficile</td>
+          <td class="p-2">+120 pts</td>
+        </tr>
+        <tr class="border-t border-purple-800">
+          <td class="p-2">💬 Sincérité</td>
+          <td class="p-2">Dire une vérité personnelle à Nyros</td>
+          <td class="p-2">+70 pts</td>
+        </tr>
+        <tr class="border-t border-purple-800">
+          <td class="p-2">🔍 Curiosité</td>
+          <td class="p-2">Cliquer sur un élément caché</td>
+          <td class="p-2">+200 pts</td>
+        </tr>
+        <tr class="border-t border-purple-800">
+          <td class="p-2">⌛ Fidélité</td>
+          <td class="p-2">Revenir 7 jours de suite</td>
+          <td class="p-2">+180 pts</td>
+        </tr>
+        <tr class="border-t border-purple-800">
+          <td class="p-2">🏱️ Code caché</td>
+          <td class="p-2">Trouver un code promo en discutant</td>
+          <td class="p-2">+300 pts</td>
+        </tr>
+        <tr class="border-t border-purple-800">
+          <td class="p-2">🧹 Débug test</td>
+          <td class="p-2">Aider à repérer un bug</td>
+          <td class="p-2">+400 pts</td>
+        </tr>
+        <tr class="border-t border-purple-800">
+          <td class="p-2">🔀 Boucle</td>
+          <td class="p-2">Parler du même sujet 3 fois dans la semaine</td>
+          <td class="p-2">+80 pts</td>
+        </tr>
+        <tr class="border-t border-purple-800">
+          <td class="p-2">🤖 IA spéciale</td>
+          <td class="p-2">Activer une version secondaire de Nyros</td>
+          <td class="p-2">+250 pts</td>
+        </tr>
+        <tr class="border-t border-purple-800">
+          <td class="p-2">👤 Invitation</td>
+          <td class="p-2">Faire découvrir Nyros à un ami</td>
+          <td class="p-2">+150 pts</td>
+        </tr>
+        <tr class="border-t border-purple-800">
+          <td class="p-2">🔒 Secret</td>
+          <td class="p-2">Trouver une phrase clé dans un message</td>
+          <td class="p-2">+350 pts</td>
+        </tr>
+        <tr class="border-t border-purple-800">
+          <td class="p-2">🧠 Analyse</td>
+          <td class="p-2">Écrire un avis structuré sur Nyros</td>
+          <td class="p-2">+200 pts</td>
+        </tr>
+        <tr class="border-t border-purple-800">
+          <td class="p-2">🎂 Événement</td>
+          <td class="p-2">Quête spéciale pour un jour (anniv, MAJ...)</td>
+          <td class="p-2">+500 pts</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Sécurité -->
+  <div class="bg-purple-900 bg-opacity-20 border border-purple-700 rounded-xl p-6">
+    <h3 class="text-lg text-purple-400 font-semibold mb-2">🔒 Sécurité et règles</h3>
+    <ul class="list-disc list-inside space-y-1">
+      <li>15 quêtes max par utilisateur</li>
+      <li>Points non échangeables contre de l’argent</li>
+      <li>Triche = suppression des points et blocage des quêtes</li>
+      <li>Progression visible dans le dashboard</li>
+    </ul>
+  </div>
+
+</section>
+
+
+      <!-- revenir a nyros -->
+<a href="../index🇫🇷.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-5 rounded-xl shadow-md transition duration-200">
+  🔙 Revenir à Nyros
+</a>

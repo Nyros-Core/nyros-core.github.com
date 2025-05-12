@@ -1,0 +1,229 @@
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" />
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, #6366f1, #8b5cf6, #d946ef);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .feature-card {
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(139, 92, 246, 0.5);
+    }
+    .pulse-btn {
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(139, 92, 246, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0); }
+    }
+    .glow {
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #fff, 0 0 10px #8b5cf6, 0 0 15px #8b5cf6; }
+      to { text-shadow: 0 0 10px #fff, 0 0 20px #d946ef, 0 0 30px #d946ef; }
+    }
+    .hexagon {
+      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    }
+
+    /* 🎨 Scrollbar personnalisée */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(to bottom, #1d1233, #2b1b46);
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #a66cff, #6d28d9);
+  border-radius: 0; /* 👈 Important : 0 pour un coin carré */
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #c084fc, #9333ea);
+}
+  </style>
+
+<!-- 🎮 Система заданий и очков - Nyros AI -->
+<section class="max-w-5xl mx-auto mt-20 text-gray-200 text-sm space-y-10">
+
+  <!-- Цель -->
+  <div class="bg-purple-900 bg-opacity-20 border border-purple-700 rounded-xl p-6">
+    <h2 class="text-2xl font-bold text-purple-300 mb-4">🎮 Система заданий и очков – Nyros AI</h2>
+    <h3 class="text-lg text-purple-400 font-semibold mb-2">🧩 Общая цель</h3>
+    <ul class="list-disc list-inside space-y-1">
+      <li>Зарабатывать персонализированные очки</li>
+      <li>Поощрять регулярное и умное использование Nyros</li>
+      <li>Разблокировать бонусы без оплаты</li>
+    </ul>
+  </div>
+
+  <!-- Персонализированные очки -->
+  <div class="bg-purple-900 bg-opacity-20 border border-purple-700 rounded-xl p-6">
+    <h3 class="text-lg text-purple-400 font-semibold mb-2">🪙 Персонализированные очки (например: NyrosPoints)</h3>
+    <ul class="list-disc list-inside space-y-1">
+      <li>Получаются за выполнение заданий и специальных действий</li>
+      <li>100 % заслужены, не продаются за деньги</li>
+    </ul>
+
+    <h4 class="text-base text-purple-300 font-semibold mt-4 mb-2">📊 Использование очков:</h4>
+    <table class="w-full table-auto border border-purple-800 text-left">
+      <thead class="bg-purple-800 text-purple-100">
+        <tr>
+          <th class="p-2">Использование</th>
+          <th class="p-2">Стоимость</th>
+        </tr>
+      </thead>
+      <tbody class="bg-purple-950 bg-opacity-30">
+        <tr class="border-t border-purple-800">
+          <td class="p-2">🎭 Сменить маскота (Нерос)</td>
+          <td class="p-2">250 очков</td>
+        </tr>
+        <tr class="border-t border-purple-800">
+          <td class="p-2">🎨 Изменить интерфейс</td>
+          <td class="p-2">500 очков</td>
+        </tr>
+        <tr class="border-t border-purple-800">
+          <td class="p-2">🧠 Разблокировать специальный стиль ИИ</td>
+          <td class="p-2">1000 очков</td>
+        </tr>
+        <tr class="border-t border-purple-800">
+          <td class="p-2">🏱️ Скидка -25 % на тариф</td>
+          <td class="p-2">1500 очков</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Доступные задания -->
+  <div class="bg-purple-900 bg-opacity-20 border border-purple-700 rounded-xl p-6">
+    <h3 class="text-lg text-purple-400 font-semibold mb-2">🌟 Система заданий (макс. 15)</h3>
+    <p class="text-sm mb-3">🔐 Максимум 15 заданий одновременно. Обновляются каждые 30 дней или заменяются админом.</p>
+    <table class="w-full table-auto border border-purple-800 text-left text-sm">
+      <thead class="bg-purple-800 text-purple-100">
+        <tr>
+          <th class="p-2">Тип</th>
+          <th class="p-2">Пример задания</th>
+          <th class="p-2">Награда</th>
+        </tr>
+      </thead>
+      <tbody class="bg-purple-950 bg-opacity-30">
+        <tr class="border-t border-purple-800">
+          <td class="p-2">🗣️ Общение</td>
+          <td class="p-2">Разговаривать с Nyros 10 дней подряд</td>
+          <td class="p-2">+100 очков</td>
+        </tr>
+        <tr class="border-t border-purple-800">
+          <td class="p-2">🎯 Точность</td>
+          <td class="p-2">Задать 3 умных вопроса подряд</td>
+          <td class="p-2">+150 очков</td>
+        </tr>
+        <tr class="border-t border-purple-800">
+          <td class="p-2">😄 Эмоция</td>
+          <td class="p-2">Поделиться искренним чувством</td>
+          <td class="p-2">+50 очков</td>
+        </tr>
+        <tr class="border-t border-purple-800">
+          <td class="p-2">📚 Знание</td>
+          <td class="p-2">Успешно ответить на сложный вопрос</td>
+          <td class="p-2">+120 очков</td>
+        </tr>
+        <tr class="border-t border-purple-800">
+          <td class="p-2">💬 Искренность</td>
+          <td class="p-2">Рассказать Nyros личную правду</td>
+          <td class="p-2">+70 очков</td>
+        </tr>
+        <tr class="border-t border-purple-800">
+          <td class="p-2">🔍 Любопытство</td>
+          <td class="p-2">Найти скрытый элемент</td>
+          <td class="p-2">+200 очков</td>
+        </tr>
+        <tr class="border-t border-purple-800">
+          <td class="p-2">⌛ Верность</td>
+          <td class="p-2">Возвращаться 7 дней подряд</td>
+          <td class="p-2">+180 очков</td>
+        </tr>
+        <tr class="border-t border-purple-800">
+          <td class="p-2">🏱️ Скрытый код</td>
+          <td class="p-2">Найти промокод через диалог</td>
+          <td class="p-2">+300 очков</td>
+        </tr>
+        <tr class="border-t border-purple-800">
+          <td class="p-2">🧹 Поиск багов</td>
+          <td class="p-2">Помочь найти ошибку</td>
+          <td class="p-2">+400 очков</td>
+        </tr>
+        <tr class="border-t border-purple-800">
+          <td class="p-2">🔀 Повтор</td>
+          <td class="p-2">3 раза обсудить одну тему за неделю</td>
+          <td class="p-2">+80 очков</td>
+        </tr>
+        <tr class="border-t border-purple-800">
+          <td class="p-2">🤖 Спец-ИИ</td>
+          <td class="p-2">Активировать альтернативную версию Nyros</td>
+          <td class="p-2">+250 очков</td>
+        </tr>
+        <tr class="border-t border-purple-800">
+          <td class="p-2">👤 Приглашение</td>
+          <td class="p-2">Рассказать другу о Nyros</td>
+          <td class="p-2">+150 очков</td>
+        </tr>
+        <tr class="border-t border-purple-800">
+          <td class="p-2">🔒 Секрет</td>
+          <td class="p-2">Найти ключевую фразу в сообщении</td>
+          <td class="p-2">+350 очков</td>
+        </tr>
+        <tr class="border-t border-purple-800">
+          <td class="p-2">🧠 Анализ</td>
+          <td class="p-2">Написать структурированный отзыв о Nyros</td>
+          <td class="p-2">+200 очков</td>
+        </tr>
+        <tr class="border-t border-purple-800">
+          <td class="p-2">🎂 Событие</td>
+          <td class="p-2">Задание на особый день (д.р., обновление...)</td>
+          <td class="p-2">+500 очков</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Безопасность -->
+  <div class="bg-purple-900 bg-opacity-20 border border-purple-700 rounded-xl p-6">
+    <h3 class="text-lg text-purple-400 font-semibold mb-2">🔒 Безопасность и правила</h3>
+    <ul class="list-disc list-inside space-y-1">
+      <li>Максимум 15 заданий на пользователя</li>
+      <li>Очки нельзя обменять на деньги</li>
+      <li>Мошенничество = обнуление очков и блокировка заданий</li>
+      <li>Прогресс отображается в личном кабинете</li>
+    </ul>
+  </div>
+
+</section>
+
+  
+  <!-- revenir a nyros -->
+    <a href="../index🇷🇺.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-5 rounded-xl shadow-md transition duration-200">
+  🔙 Вернуться к Nyros
+</a>
