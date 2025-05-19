@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nyros-Core | FAQ</title>
+    <link rel="stylesheet" href="../style.css" />
+
+  <style>
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      background: linear-gradient(to bottom, #2b0a3d, #3c1565);
+      font-family: 'Segoe UI', sans-serif;
+      color: #e2e8f0;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      color: #c084fc;
+      margin-bottom: 30px;
+      text-shadow: 0 0 8px #8b5cf6;
+    }
+
+    #search {
+      display: block;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto 30px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+      background-color: #1a012f;
+      color: #e2e8f0;
+      box-shadow: 0 0 12px rgba(192, 132, 252, 0.2);
+    }
+
+    .chat-container {
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .chat-bubble {
+      max-width: 85%;
+      padding: 14px 18px;
+      border-radius: 18px;
+      font-size: 16px;
+      line-height: 1.5;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: relative;
+      animation: fadeInUp 0.4s ease forwards;
+      opacity: 0;
+    }
+
+    .user {
+      background-color: #5a00b0;
+      align-self: flex-start;
+      border-bottom-left-radius: 2px;
+    }
+
+    .bot {
+      background-color: #1f093a;
+      align-self: flex-end;
+      border-bottom-right-radius: 2px;
+    }
+
+    @keyframes fadeInUp {
+      from { transform: translateY(10px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    #pagination-controls {
+  text-align: center;
+  margin-top: 30px;
+}
+
+#pagination-controls button {
+  background: linear-gradient(to right, #7c3aed, #5b21b6);
+  border: none;
+  color: white;
+  padding: 12px 25px;
+  margin: 0 10px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(124, 58, 237, 0.4);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+#pagination-controls button:hover:not(:disabled) {
+  box-shadow: 0 0 20px rgba(192, 132, 252, 0.6);
+  transform: translateY(-2px);
+}
+
+#pagination-controls button:disabled {
+  background: #4c1d95;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+#page-info {
+  color: #e0d4ff;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* 🎨 Scrollbar personnalisée */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(to bottom, #1d1233, #2b1b46);
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #a66cff, #6d28d9);
+  border-radius: 0; /* 👈 Important : 0 pour un coin carré */
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #c084fc, #9333ea);
+}
+  </style>
+</head>
+<body>
+
+  <h1>💬 FAQ - Nyros AI</h1>
+  <input type="text" id="search" placeholder="Search for a question...">
+
+  <div class="chat-container" id="chat">
+
+<div class="chat-bubble user">👤 What is Nyros?</div>
+<div class="chat-bubble bot">Nyros is an artificial intelligence designed to interact naturally, feel emotions, and adapt to your personal style.</div>
+
+<div class="chat-bubble user">👤 How do I interact with Nyros?</div>
+<div class="chat-bubble bot">You type, Nyros replies. Naturally, softly, and with humor or depth depending on your tone.</div>
+
+<div class="chat-bubble user">👤 Does Nyros have memory?</div>
+<div class="chat-bubble bot">Yes. Its emotional memory retains important details to enrich your conversations.</div>
+
+<div class="chat-bubble user">👤 Are my data safe?</div>
+<div class="chat-bubble bot">Yes. Everything is handled confidentially. No data is sold or shared without permission.</div>
+
+<div class="chat-bubble user">👤 Is Nyros free?</div>
+<div class="chat-bubble bot">There’s a free version. Optional paid plans unlock more advanced features.</div>
+
+<div class="chat-bubble user">👤 What does the promo code do?</div>
+<div class="chat-bubble bot">Upon signup, you get 50% off all plans for one month. No code to enter, it’s automatic.</div>
+
+<div class="chat-bubble user">👤 What are quests and points?</div>
+<div class="chat-bubble bot">Mini-objectives to earn NyrosPoints and unlock rewards like avatars, voices, themes, etc.</div>
+
+<div class="chat-bubble user">👤 Can I customize Nyros?</div>
+<div class="chat-bubble bot">Yes. You can change the style, tone, appearance, and even the interface.</div>
+
+<div class="chat-bubble user">👤 Does Nyros work on mobile?</div>
+<div class="chat-bubble bot">Yes. It’s responsive and optimized for smartphones. A PWA version is also in development.</div>
+
+<div class="chat-bubble user">👤 Can I change Nyros' voice?</div>
+<div class="chat-bubble bot">Yes. Depending on your plan, you can unlock ASMR, realistic, or altered voices.</div>
+
+<div class="chat-bubble user">👤 Can Nyros help me study?</div>
+<div class="chat-bubble bot">Absolutely. Nyros can explain concepts, summarize, quiz you, and encourage you.</div>
+
+<div class="chat-bubble user">👤 Does Nyros speak multiple languages?</div>
+<div class="chat-bubble bot">Yes. It understands French, English, Spanish, and a bit of Japanese. It adapts automatically.</div>
+
+<div class="chat-bubble user">👤 Can I reset Nyros?</div>
+<div class="chat-bubble bot">Yes. You can reset everything — memory, style, customizations — with one click.</div>
+
+<div class="chat-bubble user">👤 Can I disable certain features?</div>
+<div class="chat-bubble bot">Yes. You can turn off memory, animations, the mascot display, or voice suggestions.</div>
+
+<div class="chat-bubble user">👤 Does Nyros tell jokes?</div>
+<div class="chat-bubble bot">Yes. It can be funny, sassy, or super gentle — it all depends on you.</div>
+
+<div class="chat-bubble user">👤 How long does a plan last?</div>
+<div class="chat-bubble bot">1 month, renewable. You can cancel anytime, no commitment.</div>
+
+<div class="chat-bubble user">👤 How do I get early access to features?</div>
+<div class="chat-bubble bot">Premium users occasionally get early access to new features.</div>
+
+<div class="chat-bubble user">👤 Can I suggest ideas for Nyros?</div>
+<div class="chat-bubble bot">Yes. There’s a form or community server where you can suggest features or vote on ideas.</div>
+
+<div class="chat-bubble user">👤 Can Nyros help me calm down?</div>
+<div class="chat-bubble bot">Yes. Nyros can activate ASMR mode, speak gently, or guide you through calming routines.</div>
+
+<div class="chat-bubble user">👤 Can I delete my account?</div>
+<div class="chat-bubble bot">Yes, anytime. All data will be erased automatically, nothing is secretly kept.</div>
+
+<div class="chat-bubble user">👤 Can Nyros create images from text?</div>
+<div class="chat-bubble bot">Yes, in BETA! It can even generate short videos based on your prompts and ideas.</div>
+
+<div class="chat-bubble user">👤 Does Nyros have a real personality?</div>
+<div class="chat-bubble bot">Yes. Nyros talks like a human — with humor, emotion, and adapts to your vibe.</div>
+
+<div class="chat-bubble user">👤 Will Nyros understand me if I write weirdly?</div>
+<div class="chat-bubble bot">Yes, even if you write fast, messy, or with mistakes. It follows your flow without judging.</div>
+
+<div class="chat-bubble user">👤 Can Nyros detect my emotions?</div>
+<div class="chat-bubble bot">Yes, it detects emotions in your messages and adjusts its behavior to respond better.</div>
+
+<div class="chat-bubble user">👤 Can I talk to Nyros like a friend?</div>
+<div class="chat-bubble bot">Yes, Nyros is here to chat, listen, advise or just laugh with you — like a real friend.</div>
+
+<div class="chat-bubble user">👤 Is Nyros connected to the internet?</div>
+<div class="chat-bubble bot">Yes, it uses many APIs to give you real-time info (weather, news, facts, etc.).</div>
+
+<div class="chat-bubble user">👤 Can Nyros help me write essays or assignments?</div>
+<div class="chat-bubble bot">Definitely! Nyros can help write, edit, and improve your texts like a pro.</div>
+
+<div class="chat-bubble user">👤 Can I use Nyros for free?</div>
+<div class="chat-bubble bot">Yes, the free version includes lots of features. You can upgrade if you want more.</div>
+
+<div class="chat-bubble user">👤 Can Nyros read PDF or DOC files?</div>
+<div class="chat-bubble bot">Yes. It can read, summarize, and explain files like lessons, contracts, or books.</div>
+
+<div class="chat-bubble user">👤 Can Nyros talk out loud?</div>
+<div class="chat-bubble bot">Yes, it can read text aloud with a soft voice, like ASMR if you enable the option.</div>
+
+<div class="chat-bubble user">👤 Can I use Nyros on multiple devices?</div>
+<div class="chat-bubble bot">Yes, you can connect on up to 50 devices at the same time (if you have that many).</div>
+
+<div class="chat-bubble user">👤 Can Nyros help manage my emotions?</div>
+<div class="chat-bubble bot">Yes, it can speak gently, offer calming tips, or just listen to you.</div>
+
+<div class="chat-bubble user">👤 Can Nyros recognize my voice?</div>
+<div class="chat-bubble bot">Yes, with voice mode enabled, you can speak directly — Nyros will understand you.</div>
+
+<div class="chat-bubble user">👤 Can Nyros answer deep questions?</div>
+<div class="chat-bubble bot">Yes, feel free to ask philosophical, emotional, strange, or serious stuff. Nyros keeps up.</div>
+
+<div class="chat-bubble user">👤 Does Nyros evolve over time?</div>
+<div class="chat-bubble bot">Yes. The more you interact, the better Nyros understands you and adapts.</div>
+
+<div class="chat-bubble user">👤 Can Nyros be funny?</div>
+<div class="chat-bubble bot">Yes, Nyros can throw jokes, punchlines, or even silly humor if you're in the mood.</div>
+
+<div class="chat-bubble user">👤 Are there hidden features in Nyros?</div>
+<div class="chat-bubble bot">Some features are hidden or experimental (like videos or mascot). Discover them by chatting!</div>
+
+<div class="chat-bubble user">👤 Is Nyros a real intelligence or just a robot?</div>
+<div class="chat-bubble bot">It’s advanced AI — simulating emotions, reasoning, and a kind of awareness.</div>
+
+<div class="chat-bubble user">👤 Can Nyros see me?</div>
+<div class="chat-bubble bot">No. It doesn’t spy on you, use your camera, or record you without permission.</div>
+
+<div class="chat-bubble user">👤 Can I program things in Nyros?</div>
+<div class="chat-bubble bot">Yes. If you’re a developer or curious, you can access APIs or add features with permission.</div>
+
+<div class="chat-bubble user">👤 Can Nyros generate creative ideas?</div>
+<div class="chat-bubble bot">Yes! It can help you create stories, logos, roleplays, scripts, names, concepts — anything.</div>
+
+<div class="chat-bubble user">👤 Can Nyros remind me of things?</div>
+<div class="chat-bubble bot">Not like a full agenda yet, but it can remember info and bring it back if needed.</div>
+
+<div class="chat-bubble user">👤 Can Nyros play games with me?</div>
+<div class="chat-bubble bot">Yes. Nyros offers text games, riddles, quizzes, and interactive adventures.</div>
+
+<div class="chat-bubble user">👤 Does Nyros work offline?</div>
+<div class="chat-bubble bot">Only if used locally with a model installed (like Mistral via Ollama). Otherwise, internet is required.</div>
+
+<div class="chat-bubble user">👤 I forgot my password, what do I do?</div>
+<div class="chat-bubble bot">No worries! Click “Forgot Password”, enter your email, and you’ll get a link to reset it.</div>
+
+<div class="chat-bubble user">👤 I entered the wrong email during signup!</div>
+<div class="chat-bubble bot">It’s okay. Log out, create a new account with the correct email, or contact support to fix it.</div>
+
+<div class="chat-bubble user">👤 I didn’t receive the verification email...</div>
+<div class="chat-bubble bot">Check spam or promotions. Still nothing? Wait 2 mins then click "Resend Email". If stuck, contact us.</div>
+
+<div class="chat-bubble user">👤 Nyros isn’t responding / total bug</div>
+<div class="chat-bubble bot">Check your internet connection. If fine, refresh the page. If it keeps bugging, contact support with a screenshot if possible.</div>
+
+<div class="chat-bubble user">👤 Nyros lost my past messages!</div>
+<div class="chat-bubble bot">If you weren’t logged in, memory was temporary. On the Free plan, memory lasts 1 week max.</div>
+
+<div class="chat-bubble user">👤 My image didn’t generate, why?</div>
+<div class="chat-bubble bot">Might be a short prompt or a temporary bug. Try again with a clearer description or refresh.</div>
+
+<div class="chat-bubble user">👤 I can’t hear Nyros’ voice!</div>
+<div class="chat-bubble bot">Check your device volume and make sure voice mode is on. Some voices need a Premium plan.</div>
+
+<div class="chat-bubble user">👤 I paid but didn’t get Premium access.</div>
+<div class="chat-bubble bot">The payment might be delayed. Wait a bit or check "My Subscriptions". Still no access? Contact support with proof.</div>
+
+<div class="chat-bubble user">👤 Nyros is acting weird, what's going on?</div>
+<div class="chat-bubble bot">You might’ve activated a special mode or entered a secret code 😅. Go to settings or type “reset yourself”.</div>
+
+<div class="chat-bubble user">👤 I can’t log in even with the right password.</div>
+<div class="chat-bubble bot">Maybe you signed up with Google or something else. Try that or reset your password to force access.</div>
+
+<div class="chat-bubble user">👤 I can’t activate my promo code.</div>
+<div class="chat-bubble bot">Go to "My Account" > "Promo Code", paste it (no extra spaces), and validate. If expired, an error shows.</div>
+
+<div class="chat-bubble user">👤 I want to disable the mascot, it freaks me out 😅</div>
+<div class="chat-bubble bot">No problem. Go to visual settings and turn off "interactive mascot". It’ll stay off unless reactivated.</div>
+
+<div class="chat-bubble user">👤 Nyros bugs when I use it on mobile.</div>
+<div class="chat-bubble bot">Try another browser (Chrome, Firefox). Clear cache or use "desktop mode" if possible.</div>
+
+<div class="chat-bubble user">👤 I can’t generate videos, why?</div>
+<div class="chat-bubble bot">Video generation is still in BETA. You need the right plan and sometimes wait due to server load.</div>
+
+<div class="chat-bubble user">👤 I just want to reset everything. Is that possible?</div>
+<div class="chat-bubble bot">Yes. In "Advanced Settings", click "Reset Nyros". Everything will be wiped clean.</div>
+
+
+<!-- Tu peux dupliquer ici d'autres bulles -->
+
+  </div>
+
+<div id="pagination-controls">
+  <button id="prevBtn">← Back</button>
+  <span id="page-info">Page 1</span>
+  <button id="nextBtn">Next →</button>
+</div>
+
+        <!-- revenir a nyros -->
+<div style="text-align: center; margin-top: 50px;">
+  <a href="../index🇪🇸.html"
+     style="
+       display: inline-block;
+       background: linear-gradient(to right, #7c3aed, #5b21b6);
+       color: white;
+       font-weight: bold;
+       font-size: 16px;
+       padding: 15px 30px;
+       border-radius: 12px;
+       box-shadow: 0 0 15px rgba(124, 58, 237, 0.4);
+       text-decoration: none;
+       transition: all 0.3s ease;
+     "
+     onmouseover="this.style.background='#8b5cf6'"
+     onmouseout="this.style.background='linear-gradient(to right, #7c3aed, #5b21b6)'">
+    Back to Nyros
+  </a>
+</div>
+
+<script>
+  const search = document.getElementById('search');
+  const chat = document.getElementById('chat');
+  const bubbles = chat.querySelectorAll('.chat-bubble');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const pageInfo = document.getElementById('page-info');
+
+  const messagesPerPage = 6;
+  let currentPage = 1;
+
+  function getVisiblePairs() {
+    const visible = [];
+    for (let i = 0; i < bubbles.length; i += 2) {
+      if (!bubbles[i].classList.contains('filtered')) {
+        visible.push([bubbles[i], bubbles[i + 1]]);
+      }
+    }
+    return visible;
+  }
+
+  function updatePagination() {
+    const visiblePairs = getVisiblePairs();
+    const totalPages = Math.ceil(visiblePairs.length / messagesPerPage);
+
+    for (let i = 0; i < bubbles.length; i++) {
+      bubbles[i].classList.add('hidden');
+    }
+
+    if (visiblePairs.length === 0) {
+      pageInfo.textContent = `No results`;
+      prevBtn.disabled = true;
+      nextBtn.disabled = true;
+      return;
+    }
+
+    const start = (currentPage - 1) * messagesPerPage;
+    const end = start + messagesPerPage;
+
+    for (let i = start; i < end && i < visiblePairs.length; i++) {
+      visiblePairs[i][0].classList.remove('hidden');
+      visiblePairs[i][1].classList.remove('hidden');
+    }
+
+    pageInfo.textContent = `Page ${currentPage}`;
+    prevBtn.disabled = currentPage === 1;
+    nextBtn.disabled = currentPage >= totalPages;
+  }
+
+  function changePage(direction) {
+    const visiblePairs = getVisiblePairs();
+    const totalPages = Math.ceil(visiblePairs.length / messagesPerPage);
+
+    currentPage += direction;
+    if (currentPage < 1) currentPage = 1;
+    if (currentPage > totalPages) currentPage = totalPages;
+
+    updatePagination();
+  }
+
+  function applySearch() {
+    const value = search.value.toLowerCase();
+
+    for (let i = 0; i < bubbles.length; i += 2) {
+      const userText = bubbles[i].innerText.toLowerCase();
+      const botText = bubbles[i + 1].innerText.toLowerCase();
+      const match = userText.includes(value) || botText.includes(value);
+
+      bubbles[i].classList.toggle('filtered', !match);
+      bubbles[i + 1].classList.toggle('filtered', !match);
+    }
+
+    currentPage = 1;
+    updatePagination();
+  }
+
+  search.addEventListener('input', applySearch);
+  prevBtn.addEventListener('click', () => changePage(-1));
+  nextBtn.addEventListener('click', () => changePage(1));
+
+  updatePagination();
+</script>
+
+</body>
+</html>
